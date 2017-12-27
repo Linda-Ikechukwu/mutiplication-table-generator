@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <meta charset= "utf-8">
+        <title>Multiplication App</title>
+        <style>
+            div {
+                float:left;
+                border: solid black 1px;
+                margin-top: 10px;
+                background-color:burlywood;
+                }
+            section{
+                 margin-top : 20px;
+                }
+            body{
+                background-color: rgb(125, 199, 231);
+            }    
+            form{
+                align:center;
+            }
+        </style>
+        <script>
+                function multiply(){
+                 var x = parseInt(document.mutiplyForm.start.value);
+                 var y = parseInt(document.mutiplyForm.last.value);
+                 var z = parseInt(document.mutiplyForm.times.value);
+                 var ans = "";
+                 var counter = 0;
+                 
+                 while(x <= y){
+                     ans += '<div>';
+                     for( counter= 0; counter<= z ; counter++){
+                          ans += x + "X" +counter+ "=" +(x * counter) +"<br/>";
+                        }
+                      x++;
+                      ans += '</div>';
+                    }
+                
+                 document.getElementById("display").innerHTML= ans;
+                 
+                }
+        </script>
+    </head>
+    <body>
+      <h1 style="text-align:center">Multiplication Table Generator</h1> 
+      <form name="mutiplyForm">
+          Enter Start Number: <input type="number" name="start" size="5" id="start">
+          Enter Last Number: <input type="number" name="last" size="5" id="last" >
+          Enter No Of Times: <input type="number" name="times" size="5" id="times">
+          <button type="button"  onclick="multiply()">Submit</button>
+          <section id="display"></section>
+      </form>
+
+    
+
+    </body>
+</html>
